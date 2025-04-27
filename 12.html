@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            background-color: #fff;
+            width: 800px;
+            height: 450px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            overflow: hidden;
+        }
+
+        .form-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .left-section {
+            flex: 1;
+            background-color: #5e72eb;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-radius: 10px 0 0 10px;
+        }
+
+        .left-section h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .left-section p {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .left-section button {
+            background-color: white;
+            color: #5e72eb;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .left-section button:hover {
+            background-color: #f0f0f0;
+        }
+
+        .form-group {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #5e72eb;
+            box-shadow: 0 0 5px rgba(94, 114, 235, 0.3);
+        }
+
+        .form-group button {
+            background-color: #5e72eb;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group button:hover {
+            background-color: #4d5dbd;
+        }
+
+        .social-login {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-login p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .social-icons a i {
+            font-size: 20px;
+            color: #333;
+        }
+
+        .login-form {
+            transform: translateX(0);
+        }
+
+        .register-form {
+            transform: translateX(100%);
+        }
+
+        .slide-left {
+            transform: translateX(-100%);
+        }
+
+        .slide-right {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <h2>Welcome Back!</h2>
+            <p>Already have an account? Login to continue.</p>
+            <button id="login-btn">Login</button>
+        </div>
+        <div class="form-section login-form" id="login-form">
+            <h2>Login</h2>
+            <form>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <a href="#" style="font-size: 14px; color: #5e72eb; text-decoration: none; margin-bottom: 10px; display: block; text-align: right;">Forgot Password?</a>
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+            <div class="social-login">
+                <p>Or login with social platforms</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-google">G</i></a>
+                    <a href="#"><i class="fab fa-facebook-f">F</i></a>
+                    <a href="#"><i class="fab fa-twitter">T</i></a>
+                    <a href="#"><i class="fab fa-linkedin-in">in</i></a>
+                </div>
+            </div>
+        </div>
+        <div class="form-section register-form" id="register-form">
+            <h2>Register</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Username</label>
+                    <input type="text" id="name" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label for="new-password">Password</label>
+                    <input type="password" id="new-password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <button type="submit">Register</button>
+                </div>
+            </form>
+            <div class="social-login">
+                <p>Or register with social platforms</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-google">G</i></a>
+                    <a href="#"><i class="fab fa-facebook-f">F</i></a>
+                    <a href="#"><i class="fab fa-twitter">T</i></a>
+                    <a href="#"><i class="fab fa-linkedin-in">in</i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const container = document.querySelector('.container');
+        const loginBtn = document.getElementById('login-btn');
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+
+        loginBtn.addEventListener('click', () => {
+            container.classList.add('slide-left');
+            container.classList.remove('slide-right');
+        });
+
+        const registerBtn = document.createElement('button');
+        registerBtn.textContent = "Register";
+        registerBtn.onclick = () => {
+            container.classList.remove('slide-left');
+            container.classList.add('slide-right');
+        };
+        loginBtn.parentElement.appendChild(registerBtn);
+    </script>
+    <script>
+        const loginFormElement = document.getElementById('login-form');
+        const registerFormElement = document.getElementById('register-form');
+
+        loginFormElement.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const usernameInput = document.getElementById('username');
+            const passwordInput = document.getElementById('password');
+
+            if (!usernameInput.value.trim()) {
+                alert('Please enter your username.');
+                return;
+            }
+            if (!passwordInput.value.trim()) {
+                alert('Please enter your password.');
+                return;
+            }
+
+            alert('Login successful (simulated).');
+        });
+
+        registerFormElement.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const newPasswordInput = document.getElementById('new-password');
+
+            if (!nameInput.value.trim()) {
+                alert('Please enter your username.');
+                return;
+            }
+            if (!emailInput.value.trim()) {
+                alert('Please enter your email.');
+                return;
+            }
+            if (!newPasswordInput.value.trim()) {
+                alert('Please enter your password.');
+                return;
+            }
+
+            alert('Registration successful (simulated).');
+        });
+    </script>
+</body>
+</html>
